@@ -1,0 +1,45 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoneTag Bot (Demo)</title>
+<style>
+ body { background: #121212; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin:0; }
+ .container { text-align:center; background:#1f1f1f; padding:20px; border-radius:10px; width:300px; }
+ button { background:green; color:#fff; padding:10px; border:none; border-radius:5px; margin-top:10px; cursor:pointer; width:100%; }
+ button:hover{ background:darkorange; }
+ .stats, .user-info { margin:10px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+ <h1>MoneTag Bot</h1>
+ <div class="user-info">Welcome, <span id="user-name">@demoUser</span></div>
+ <div class="stats">
+   Watched Ads: <span id="watched-ads">0</span><br>
+   Earned Points: <span id="earned-points">0.00</span>
+ </div>
+ <button onclick="watchAd()">Watch Ad</button>
+ <button onclick="startAutoAds()">Auto Show Ads</button>
+ <button onclick="stopAutoAds()">Stop Auto Ads</button>
+</div><script src="https://cdn.example.com/demo.js" data-zone="1234567"></script><script>
+const BOT_TOKEN = "8145066269:AAFSOarOoVInlWd8UUXRK1rXsANvw0YbHWw";
+const ADMIN_USER_ID = 8054502215;
+let watchedAdsCount = 0;
+let earnedPoints = 0.00;
+let autoAdInterval;
+
+function watchAd(){
+ watchedAdsCount++;
+ earnedPoints += 0.50;
+ document.getElementById('watched-ads').textContent = watchedAdsCount;
+ document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
+}
+function startAutoAds(){
+ autoAdInterval = setInterval(watchAd, 5000);
+}
+function stopAutoAds(){
+ clearInterval(autoAdInterval);
+}
+</script></body>
+</html>
