@@ -1,4 +1,5 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,10 @@
  <button onclick="watchAd()">Watch Ad</button>
  <button onclick="startAutoAds()">Auto Show Ads</button>
  <button onclick="stopAutoAds()">Stop Auto Ads</button>
-</div><script src="https://cdn.example.com/demo.js" data-zone="1234567"></script><script>
+</div>
+
+<script src="https://cdn.example.com/demo.js" data-zone="1234567"></script>
+<script>
 const BOT_TOKEN = "8145066269:AAFSOarOoVInlWd8UUXRK1rXsANvw0YbHWw";
 const ADMIN_USER_ID = 8054502215;
 let watchedAdsCount = 0;
@@ -41,5 +45,6 @@ function startAutoAds(){
 function stopAutoAds(){
  clearInterval(autoAdInterval);
 }
-</script></body>
+</script>
+</body>
 </html>
